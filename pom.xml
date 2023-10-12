@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.bichngoc</groupId>
+    <artifactId>math-util-usage</artifactId>
+    <version>1.0</version>
+    <packaging>jar</packaging>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>18</maven.compiler.source>
+        <maven.compiler.target>18</maven.compiler.target>
+        <exec.mainClass>com.bichngoc.mathutil.usage.main.Main</exec.mainClass>
+    </properties>    
+    <dependencies>
+        <!--jdbc: KHÔNG CẦN ĐƯA VÀO, LÚC NÀO CẦN MỚI ĐƯA.-->
+    <!--https://mvnrepository.com/artifact/com.microsoft.sqlserver/mssql-jdbc 
+        <dependency>
+            <groupId>com.microsoft.sqlserver</groupId>
+            <artifactId>mssql-jdbc</artifactId>
+            <version>12.3.0.jre17-preview</version>
+        </dependency>-->
+        
+        <dependency>  <!--XÀI ĐỒ THƯ VIỆN CỦA MÌNH-->
+            <groupId>com.bichngoc</groupId>
+            <artifactId>math-util-mvn</artifactId>
+            <version>1.0</version>
+        </dependency>
+    </dependencies>
+    
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.1.1</version>
+            </plugin>
+        </plugins>
+    </build>
+</project>
