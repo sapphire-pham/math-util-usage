@@ -1,0 +1,24 @@
+name: Math utility Repo applying CI   # Cách ta đặt tên cho tất cả các lệnh ở dưới ~ tên tập tin
+                                      # Tên của danh sách các công việc cần làm: push code, sửa code của kho
+
+on:
+  push:                               # Khi ai đó sửa code
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:                                 # Thì làm những việc dưới đây
+  build:                              # Build cái app bằng cách
+          
+    runs-on: ubuntu-latest            # Mượn cái server bên Mỹ cài OS Ubuntu
+
+    steps:                            # Download code cái server vừa mượn
+    - uses: actions/checkout@v3
+    - name: Set up JDK 18             # Cài JDK trên server vừa mượn
+      uses: actions/setup-java@v3
+      with:
+        java-version: '18'
+        distribution: 'temurin'
+        cache: maven
+    - name: Build with Maven (tạo file .jar .war)          # Mượn Maven và chạy lệnh huyền thoại mvn package
+      run: mvn -B package --file pom.xml                   
